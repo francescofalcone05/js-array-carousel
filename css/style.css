@@ -1,0 +1,79 @@
+/*************** COMMON/CONTAINER *****************/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(209, 209, 115);
+}
+
+
+
+/************* HEADER *************/
+
+
+
+
+
+/************* MAIN *************/
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 1rem auto;
+    position: relative;
+
+}
+
+.img-container{
+    width: 46rem;
+    height: 30rem;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hide{
+    display: none;
+}
+
+.active{
+    display: unset;
+}
+
+.btns{
+    background-color: grey;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    margin: 1rem 14rem;
+}
+
+
+/************* FOOTER *************/
+
+
+
+
+
+/************* RESPONSIVE *************/
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 768px) {
+ 
+}
+
+@media screen and (max-width: 576px) {
+ 
+}
