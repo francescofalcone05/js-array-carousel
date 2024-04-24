@@ -84,7 +84,7 @@ previousButton.addEventListener('click', function(){
     if(immagineSuccessiva < 0){
 
         //ripartiamo dall'ultima 
-        immagineSuccessiva = 4
+        immagineSuccessiva = imgList.length-1
        
     } 
     
