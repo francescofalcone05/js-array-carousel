@@ -1,12 +1,15 @@
 
+// Assegno bottone next ad una variabile
 const nextButton = document.getElementById('nextbt')
-//console.log(nextButton)
-const previousButton = document.getElementById('prevbt')
-//console.log(previousButton)
 
+
+// Assegno bottone previous ad una variabile
+const previousButton = document.getElementById('prevbt')
+
+//Creo array con le immagini
+let imgList = document.getElementsByClassName('hide')
 
 let imgAttiva = ''
-let imgList = document.getElementsByClassName('hide')
 let immagineSuccessiva = ''
 //console.log(imgList)
 
@@ -14,34 +17,37 @@ let immagineSuccessiva = ''
 nextButton.addEventListener('click', function() {
 
     for (let i = 0; i < imgList.length; i++ ){
-        //console.log(i)
-    
+        
+       // prendo l'immagine attualmente selezionata 
         const immg = imgList[i]
-       // console.log(immg)
-    
+       
+        //se contiene la classe active 
         if(immg.classList.contains("active")) {
-    
+            
+            //rimuovi la classe active
             immg.classList.remove("active")
     
+            //memorizzo indice 
             imgAttiva = i 
-            //console.log(imgAttiva)
         }
          
         
     }
     
-
+    //se l'indice +1 e` uguale a array.length
     if((imgAttiva + 1) == imgList.length) {
     
+     // l'immagine successiva sara` la numero 0 (la prima)   
      immagineSuccessiva = imgList[0]
 
     }  else {
 
+        //altrimenti vai a quella successiva a quella attuale
         immagineSuccessiva = imgList[imgAttiva + 1]
-        //console.log(immagineSuccessiva)
+ 
     }
 
-    
+    //all'immagine attualmente selezionata, add 'active' class
     immagineSuccessiva.classList.add("active")
     
 })
@@ -52,35 +58,38 @@ nextButton.addEventListener('click', function() {
 previousButton.addEventListener('click', function(){
 
     
-    immagineSuccessiva = imgList[imgAttiva]
-   
-    
 
     for (let i = 0; i < imgList.length; i++ ) {
-        console.log(i)
+        
          
+        // prendo l'immagine attualmente selezionata 
        let immg = imgList[i]
 
+        //se contiene la classe active 
         if(immg.classList.contains("active")) {
 
+            //rimuovi la classe active
             immg.classList.remove("active")
          
+            //memorizzo indice 
             imgAttiva = i 
 
         }
 
-
+        //la prossima immagine su cui lavorare
+        // sara` quella precedente a quella attuale
     } immagineSuccessiva = imgAttiva -1 
 
+     //se l'indice selezionato e` minore di 0
     if(immagineSuccessiva < 0){
 
+        //ripartiamo dall'ultima 
         immagineSuccessiva = 4
-       // immg = imgList[0]
-
+       
     } 
     
 
-
+    //all'immagine attualmente selezionata, add 'active' class
      imgList[immagineSuccessiva].classList.add("active")
 
 
